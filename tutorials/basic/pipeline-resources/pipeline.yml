@@ -3,7 +3,10 @@ resources:
   - name: resource-tutorial
     type: git
     source:
-      uri: https://github.com/starkandwayne/concourse-tutorial.git
+      uri: https://github.com/eequalsmcsquared/concourse-tutorial
+      git_config:
+        - name: safe.directory
+          value: '*'
       branch: develop
 
 jobs:
@@ -13,3 +16,4 @@ jobs:
       - get: resource-tutorial
       - task: hello-world
         file: resource-tutorial/tutorials/basic/task-hello-world/task_hello_world.yml
+

@@ -2,9 +2,10 @@
 platform: linux
 
 image_resource:
-  type: docker-image
+  type: registry-image
   source: {repository: busybox}
 
+# Since input task-scripts matches the current directory task-scripts we did not need to specify fly execute -i task-scripts=..
 inputs:
   - name: task-scripts
 

@@ -1,12 +1,14 @@
+# fly -t tutorial e -c inputs_required.yml -i pass-local-path-folder=.
+# fly -t tutorial e -c inputs_required.yml -i pass-local-path-folder=../task-hello-world
 ---
 platform: linux
 
 image_resource:
-  type: docker-image
+  type: registry-image
   source: {repository: busybox}
 
 inputs:
-  - name: some-important-input
+  - name: pass-local-path-folder
 
 run:
   path: ls

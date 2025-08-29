@@ -1,8 +1,10 @@
+# The fly execute -i option can be removed if the current directory is the same name as the required input.
+# fly -t tutorial e -c input_parent_dir.yml
 ---
 platform: linux
 
 image_resource:
-  type: docker-image
+  type: registry-image
   source: {repository: busybox}
 
 inputs:
