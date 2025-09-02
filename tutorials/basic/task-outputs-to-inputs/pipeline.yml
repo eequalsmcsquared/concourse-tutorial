@@ -3,8 +3,11 @@ resources:
   - name: resource-tutorial
     type: git
     source:
-      uri: https://github.com/starkandwayne/concourse-tutorial.git
-      branch: develop
+      uri: https://github.com/eequalsmcsquared/concourse-tutorial
+      git_config:
+        - name: safe.directory
+          value: '*'
+      branch: main
 
 jobs:
   - name: job-pass-files
@@ -15,7 +18,7 @@ jobs:
         config:
           platform: linux
           image_resource:
-            type: docker-image
+            type: registry-image
             source: {repository: busybox}
 
           inputs:
@@ -30,7 +33,7 @@ jobs:
         config:
           platform: linux
           image_resource:
-            type: docker-image
+            type: registry-image
             source: {repository: busybox}
 
           inputs:
