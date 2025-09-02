@@ -4,6 +4,9 @@ resources:
     type: git
     source:
       uri: https://github.com/eequalsmcsquared/concourse-tutorial
+      git_config:
+        - name: safe.directory
+          value: '*'
       branch: main
 
   - name: my-timer
