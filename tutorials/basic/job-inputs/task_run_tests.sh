@@ -1,5 +1,6 @@
 #!/bin/sh
 
+apk add build-base
 set -e
 
 # task script is in resource-tutorial/job-inputs/ folder
