@@ -1,5 +1,6 @@
 #!/bin/sh
 
+apk add git
 set -e # fail fast
 set -x # print commands
 
